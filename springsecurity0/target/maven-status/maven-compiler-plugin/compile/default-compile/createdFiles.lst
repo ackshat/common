@@ -1,0 +1,5 @@
+com\javahash\config\ViewConfig.class
+com\javahash\config\MVCInitializer.class
+com\javahash\config\SecurityInit.class
+com\javahash\controller\AppController.class
+com\javahash\config\AppSecurityConfig.class
