@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app>
+<portlet>
+        <portlet-name>program-and-subprogram-search</portlet-name>
+        <display-name>Program and Subprogram search</display-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet
+        </portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>classpath*:spring/portlets/program-and-subprogram-search-portlet.xml
+            </value>
+        </init-param>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
+            <portlet-mode>edit</portlet-mode>
+        </supports>
+        <portlet-info>
+            <title>Program search</title>
+        </portlet-info>
+ </portlet>
+</portlet-app>

@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fsvps</groupId>
+  <artifactId>fsvps-common-dependencies</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>fsvps-common-dependencies</name>
+  <packaging>jar</packaging>
+  <properties>
+  		<springframework.version>4.1.6.RELEASE</springframework.version>
+		<spring.web.version>2.3.0.RELEASE</spring.web.version>
+		<quartz.version>2.2.1</quartz.version>
+		<spring.orm.version>3.1.2.RELEASE</spring.orm.version>
+  </properties>
+  <dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<!-- Transaction dependency is required with Quartz integration -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		
+		<!-- Quartz framework -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
+		</dependency>
+  </dependencies>
+  
+  <build>
+  	<finalName>fsvps-common-dependencies</finalName>
+  	<plugins>
+ 
+ <!-- MAVEN-JAR-PLUGIN ==> will create the jar without dependent jars in the jar
+ 	EVEN IF i don't use any plugin in this xml file , using command  'mvn clean install' 
+ 	creates the ware file which does not have any dependencies inside .
+ 	
+ 	CONVENTION OVER CONFIGURATION (means you have tell when you don't need default configuration)
+ 	Maven uses convention over configuration, this means that 
+ 	you only need to tell Maven the things that are different from the defaults.
+ 	There are other conventions also which maven follows which you see by default
+ -->
+  		<!-- <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+				<excludes>
+					<exclude>**/log4j.properties</exclude>
+				</excludes>
+				<archive>
+					<manifest>
+						<addClasspath>true</addClasspath>
+						<classpathPrefix>common-dependencies/</classpathPrefix>
+					</manifest>
+				</archive>
+			</configuration>
+		</plugin> -->
+	
+<!-- MAVEN-DEPENDENCY-PLUGIN ==> 
+ 	This plugin will include dependencies in a folder(in parallel to war file)
+  	named 'dependency'(by default if not mentioned in outputDirectory) .
+  
+  	=== > STILL THE DEPENDENCIES ARE NOT PACKAGED IN THE JAR FILE i.e. NOT AGGREGATED
+ -->
+  
+<!-- http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1099 -->
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>2.5.1</version>
+			<executions>
+				<execution>
+					<id>copy-dependencies</id>
+					<phase>package</phase>
+					<goals>
+						<goal>copy-dependencies</goal>
+					</goals>
+					<configuration>
+					<!-- exclude junit, we need runtime dependency only -->
+						<includeScope>runtime</includeScope>
+						<outputDirectory>${project.build.directory}/common-dependencies/</outputDirectory>
+					</configuration>
+				</execution>
+			</executions>
+  		</plugin>
+  		
+  	</plugins>
+  	
+  </build>
+  
+</project>

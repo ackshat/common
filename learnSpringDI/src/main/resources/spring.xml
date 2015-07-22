@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+	<bean id="CustomerBean" class="com.learn.springdi.Customer" scope="prototype">
+	<constructor-arg ref="person" >
+	<bean class="com.learn.springdi.Person">
+				<property name="name" value="mkyong" />
+				<property name="address" value="address1" />
+				<!-- <property name="age" value="28" /> -->
+		</bean>
+	</constructor-arg>
+	</bean>
+</beans>
