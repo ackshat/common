@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/222/trunk/ch1_HelloWorld
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/213/trunk/ch1_HelloWorld/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/17/trunk/ch1_HelloWorld/.project
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/138/trunk/ch1_HelloWorld/build.properties
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/17/trunk/ch1_HelloWorld/pom.xml
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/17/trunk/ch1_HelloWorld/build.xml
+END

@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=com.isostech.liferay.sample -DartifactId=sample-portlet -Dversion=1.0-SNAPSHOT -DarchetypeGroupId=com.liferay.maven.archetypes -DarchetypeArtifactId=liferay-portlet-archetype -DinteractiveMode=false

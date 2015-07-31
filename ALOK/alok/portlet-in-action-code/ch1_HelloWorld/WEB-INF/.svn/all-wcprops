@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/222/trunk/ch1_HelloWorld/WEB-INF
+END
+liferay-portlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/193/trunk/ch1_HelloWorld/WEB-INF/liferay-portlet.xml
+END
+portlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/222/trunk/ch1_HelloWorld/WEB-INF/portlet.xml
+END
+Language-ext.properties
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/17/trunk/ch1_HelloWorld/WEB-INF/Language-ext.properties
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/17/trunk/ch1_HelloWorld/WEB-INF/web.xml
+END
+liferay-display.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/138/trunk/ch1_HelloWorld/WEB-INF/liferay-display.xml
+END
